@@ -15,3 +15,7 @@
 .project
 **/build/**
 **/bin/**
+
+# Compiled source #
+*.class
+*.exe
