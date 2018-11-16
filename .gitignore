@@ -13,4 +13,5 @@
 .gradle
 .settings
 .project
-/build
+**/build
+**/bin
