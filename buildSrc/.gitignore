@@ -1,0 +1,18 @@
+# IntelliJ project files 
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# project file
+**/.settings/
+bin/
+.classpath
+.project
+
+# Gradle
+.gradle/
+**/build
+
+#Visual Studio files
+.vscode/
