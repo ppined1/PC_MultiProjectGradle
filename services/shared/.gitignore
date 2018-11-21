@@ -5,14 +5,14 @@
 .idea/
 
 # project file
-**/.settings/
+.settings/
 bin/
 .classpath
 .project
 
 # Gradle
 .gradle/
-**/build
+/build
 
 #Visual Studio files
 .vscode/
