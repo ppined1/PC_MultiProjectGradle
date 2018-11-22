@@ -11,20 +11,8 @@ bin/
 .project
 
 # Gradle
-<<<<<<< HEAD
 .gradle/
 **/build
 
 #Visual Studio files
 .vscode/
-=======
-.gradle
-.settings
-.project
-**/build/**
-**/bin/**
-
-# Compiled source #
-*.class
-*.exe
->>>>>>> a09c8fa8c41b6f86139532241d80af7ea556a66b
