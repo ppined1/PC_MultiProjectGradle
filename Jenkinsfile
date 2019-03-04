@@ -60,5 +60,8 @@ pipeline {
 			      subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
 			      body: "Something is wrong with ${env.BUILD_URL}")
 		}
+		success {
+			submitJUnitTestResultsToqTest([apiKey: 'b6fb6581-6125-4966-b3eb-8e53995bb24b', containerID: 8, containerType: 'release', createNewTestRunsEveryBuildDate: false, createTestCaseForEachJUnitTestClass: true, createTestCaseForEachJUnitTestMethod: false, overwriteExistingTestSteps: true, parseTestResultsFromTestingTools: false, projectID: 2, qtestURL: 'https://qtest-demo.ceiba.com.co', submitToAReleaseAsSettingFromQtest: false, submitToExistingContainer: true, utilizeTestResultsFromCITool: true])
+		}
 	}
 }
