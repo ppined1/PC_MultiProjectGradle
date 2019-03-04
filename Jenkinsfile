@@ -1,8 +1,6 @@
 pipeline {
 	//where and how to execute the Pipeline
-	agent {
-		label 'Slave_Induccion'
-	}
+	agent any
 	
 	options {
 		buildDiscarder(logRotator(numToKeepStr: '5')) 
@@ -11,8 +9,7 @@ pipeline {
 	
 	//A section defining tools to auto-install and put on the PATH
 	tools {
-		jdk 'JDK8_Centos'
-		gradle 'Gradle4.5_Centos'
+		gradle 'Gradle4.5'
 	}
 	
 	triggers {
@@ -37,14 +34,14 @@ pipeline {
 			}
 		}
 
-		stage('Static Code Analysis') {
+		/*stage('Static Code Analysis') {
 			steps{
 				echo '------------>Análisis de código estático<------------'
 				withSonarQubeEnv('Sonar') {
 					sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
 				}
 			}
-		}
+		}*/
 		
 		stage('Build') {
 			steps {
