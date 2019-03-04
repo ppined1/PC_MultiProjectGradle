@@ -9,7 +9,7 @@ pipeline {
 	
 	//A section defining tools to auto-install and put on the PATH
 	tools {
-		JDK 'JDK8'
+		jdk 'JDK8'
 		gradle 'Gradle4.5'
 	}
 	
