@@ -61,7 +61,7 @@ pipeline {
 			      body: "Something is wrong with ${env.BUILD_URL}")
 		}
 		success {
-			submitJUnitTestResultsToqTest([apiKey: 'e9da9c87-edfd-4dc3-bdf5-71685d6122df', containerID: 8, containerType: 'release', createNewTestRunsEveryBuildDate: false, createTestCaseForEachJUnitTestClass: true, createTestCaseForEachJUnitTestMethod: false, overwriteExistingTestSteps: true, parseTestResultsFromTestingTools: false, projectID: 2, qtestURL: 'https://qtest-demo.ceiba.com.co', submitToAReleaseAsSettingFromQtest: false, submitToExistingContainer: true, utilizeTestResultsFromCITool: true])
+			submitJUnitTestResultsToqTest([apiKey: 'e9da9c87-edfd-4dc3-bdf5-71685d6122df', containerID: 7, containerType: 'release', createNewTestRunsEveryBuildDate: false, createTestCaseForEachJUnitTestClass: true, createTestCaseForEachJUnitTestMethod: false, overwriteExistingTestSteps: true, parseTestResultsFromTestingTools: false, projectID: 2, qtestURL: 'https://qtest-demo.ceiba.com.co', submitToAReleaseAsSettingFromQtest: false, submitToExistingContainer: true, utilizeTestResultsFromCITool: true])
 		}
 	}
 }
