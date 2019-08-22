@@ -1,4 +1,4 @@
-package org.gradle.shared;
+ackage org.gradle.shared;
 
 import junit.framework.TestCase;
 
@@ -17,8 +17,6 @@ public class PersonTest extends TestCase {
         assertEquals("mainValue", new Person("test").readProperty());
     }
 
-    @Test     
-    @Ignore("this test is not ready yet")
     public void testTestProperty() throws IOException {
         Properties properties = new Properties();
         properties.load(getClass().getClassLoader().getResourceAsStream("org/gradle/shared/test.properties"));
