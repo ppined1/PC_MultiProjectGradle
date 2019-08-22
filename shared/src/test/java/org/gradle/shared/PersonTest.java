@@ -17,7 +17,8 @@ public class PersonTest extends TestCase {
         assertEquals("mainValue", new Person("test").readProperty());
     }
 
-    @Ignore
+    @Test     
+    @Ignore("this test is not ready yet")
     public void testTestProperty() throws IOException {
         Properties properties = new Properties();
         properties.load(getClass().getClassLoader().getResourceAsStream("org/gradle/shared/test.properties"));
