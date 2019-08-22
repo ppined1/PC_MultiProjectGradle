@@ -20,6 +20,6 @@ public class PersonTest extends TestCase {
     public void testTestProperty() throws IOException {
         Properties properties = new Properties();
         properties.load(getClass().getClassLoader().getResourceAsStream("org/gradle/shared/test.properties"));
-        assertEquals("testVal", properties.getProperty("test"));
+        assertEquals("testValue", properties.getProperty("test"));
     }
 }
