@@ -1,4 +1,4 @@
-ackage org.gradle.shared;
+package org.gradle.shared;
 
 import junit.framework.TestCase;
 
