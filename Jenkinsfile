@@ -35,14 +35,14 @@ pipeline {
 			}
 		}
 
-		/*stage('Static Code Analysis') {
+		stage('Static Code Analysis') {
 			steps{
 				echo '------------>Análisis de código estático<------------'
 				withSonarQubeEnv('Sonar') {
 					sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
 				}
 			}
-		}*/
+		}
 		
 		stage('Build') {
 			steps {
@@ -55,14 +55,9 @@ pipeline {
 	post {
 		failure {
 			echo 'This will run only if failed'
-			//send notifications about a Pipeline to an email
-			mail (to: 'yuliana.canas@ceiba.com.co',
-			      subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-			      body: "Something is wrong with ${env.BUILD_URL}")
 		}
 		always {
-			junit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
-			submitJUnitTestResultsToqTest([apiKey: 'e9da9c87-edfd-4dc3-bdf5-71685d6122df', containerID: 7, containerType: 'release', createNewTestRunsEveryBuildDate: false, createTestCaseForEachJUnitTestClass: true, createTestCaseForEachJUnitTestMethod: false, overwriteExistingTestSteps: true, parseTestResultsFromTestingTools: false, projectID: 2, qtestURL: 'https://qtest-demo.ceiba.com.co', submitToAReleaseAsSettingFromQtest: false, submitToExistingContainer: true, utilizeTestResultsFromCITool: true])
+			echo 'This run was challenged'
 		}
 	}
 }
