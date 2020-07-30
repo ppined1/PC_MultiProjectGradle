@@ -9,8 +9,8 @@ pipeline {
 	
 	//A section defining tools to auto-install and put on the PATH
 	tools {
-		jdk 'JDK8'
-		gradle 'Gradle4.5'
+		jdk 'JDK8_Centos' //Preinstalada en la Configuración del Master
+   	        gradle 'Gradle4.5_Centos' //Preinstalada en la Configuración del Master
 	}
 	
 	triggers {
@@ -22,7 +22,13 @@ pipeline {
 		stage('Checkout') {
 			steps{
 				echo "------------>Checkout<------------"
-				checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Git_Centos', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub_yucaci24', url: 'https://github.com/yucaci24/PC_MultiProjectGradle']]])
+				checkout([$class: 'GitSCM',
+					  branches: [[name: 'master']],
+					  doGenerateSubmoduleConfigurations: false, 
+					  extensions: [],
+					  gitTool: 'Git_Centos',
+					  submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub_pedro_pineda', 
+										 url: 'https://github.com/ppined1/PC_MultiProjectGradle']]])
 				sh 'gradle clean'
 			}
 		}
